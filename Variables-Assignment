@@ -1,0 +1,258 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOhE0H/pgqrOL1YcElmP8Nu",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Raavvone/Assingments-CLoudy-ML/blob/main/Variables-Assignment\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 10,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "zYD9GDG4qOsz",
+        "outputId": "36814462-dd6a-4533-988c-eba716a5718f"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "enter temperture: 45\n",
+            "Is this in Celsius or Fahrenheit? (C/F): C\n",
+            "Temperature in Fahrenheit:  113.0\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Question 1 :  Write a Python program that asks the user to enter a\n",
+        "# temperature and specify whether it's in Celsius or Fahrenheit, converts the temperature to the opposite unit\n",
+        "\n",
+        "temp=float(input('enter temperture: '))\n",
+        "unit=input('Is this in Celsius or Fahrenheit? (C/F): ').upper()\n",
+        "\n",
+        "if unit=='C':\n",
+        "  result=(temp*9/5)+32\n",
+        "  print('Temperature in Fahrenheit: ',result)\n",
+        "\n",
+        "elif unit=='F':\n",
+        "  result=(temp-32)*5/9\n",
+        "  print('Temperature in Celsius: ',result)\n",
+        "\n",
+        "else:\n",
+        "  print('Invalid unit. Please enter C or F.')"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 2 : Write a Python program to calculate the simple interest for a given principal amount,\n",
+        "# rate of interest, and time by prompting the user for inputs, and outputting both the simple interest and the total amount.\n",
+        "\n",
+        "\n",
+        "principal= float(input('enter principal amount: '))\n",
+        "rate= float(input('enter rate of interest: '))\n",
+        "time= float(input('enter time in years'))\n",
+        "\n",
+        "simple_interest = principal*rate*time/100\n",
+        "total_amount = principal + simple_interest\n",
+        "\n",
+        "print('simple interest is: ', simple_interest)\n",
+        "print('total amount is: ', total_amount)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "JFazikxsqSXK",
+        "outputId": "834f64d2-1668-43ec-8b3d-d105697946b1"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "enter principal amount: 100000\n",
+            "enter rate of interest: 8.9\n",
+            "enter time in years3\n",
+            "simple interest is:  26700.0\n",
+            "total amount is:  126700.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 3 : Write a Python program that asks the user to enter an amount in their home currency (e.g., USD),\n",
+        "# asks for the target currency (e.g., EUR), uses predefined conversion rates to calculate the equivalent amount,\n",
+        "# and outputs the converted amount in the target currency.\n",
+        "\n",
+        "usd_to_inr = 83\n",
+        "usd_to_eur = 0.93\n",
+        "usd_to_gbp = 0.79\n",
+        "\n",
+        "amount= float(input(\"Enter the amount in USD: \"))\n",
+        "target = input(\"Enter the target currency: \").upper()\n",
+        "\n",
+        "if target== 'INR':\n",
+        "  converted_amount= amount*usd_to_inr\n",
+        "  print(converted_amount)\n",
+        "elif target== 'EUR':\n",
+        "  converted_amount= amount*usd_to_eur\n",
+        "  print(converted_amount)\n",
+        "elif target== 'GBP':\n",
+        "  converted_amount= amount*usd_to_gbp\n",
+        "  print(converted_amount)\n",
+        "else:\n",
+        "  print('wrong input')\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "44kRBhJMquqj",
+        "outputId": "0c37f346-d72a-417c-a0c1-df12b0034003"
+      },
+      "execution_count": 14,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter the amount in USD: 1\n",
+            "Enter the target currency: INR\n",
+            "83.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 4 : Write a Python program that asks for the user's weight (kg) and height (m),\n",
+        "# calculates the BMI , and outputs the BMI with a category (underweight, normal weight, overweight, or obese)\n",
+        "#  based on standard thresholds.\n",
+        "\n",
+        "weight=float(input('Enter your weight in kg: '))\n",
+        "height=float(input('Enter your height in cm: '))/100\n",
+        "\n",
+        "\n",
+        "BMI=weight/(height**2)\n",
+        "\n",
+        "\n",
+        "if BMI <= 18.5:\n",
+        "    print('your BMI:', BMI)\n",
+        "    print('Underweight')\n",
+        "elif 18.5 <= BMI < 25:\n",
+        "    print('your BMI:', BMI)\n",
+        "    print('Normal weight')\n",
+        "elif 25 <= BMI < 30:\n",
+        "    print('your BMI:', BMI)\n",
+        "    print('Overweight')\n",
+        "else:\n",
+        "    print('your BMI:', BMI)\n",
+        "    print('Obese')\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9k3hwM2uqudM",
+        "outputId": "1e054dce-686c-4bb4-ca99-4cef090bc9a9"
+      },
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter your weight in kg: 45\n",
+            "Enter your height in cm: 167\n",
+            "your BMI: 16.1353938828929\n",
+            "Underweight\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 5 : Write a Python program to convert a user-input distance between miles and kilometers\n",
+        "# and output the converted distance using the conversion factors 1 mile = 1.60934 kilometers and 1 kilometer = 0.621371 miles.\n",
+        "\n",
+        "mile_to_km= 1.60934\n",
+        "km_to_mile= 0.621371\n",
+        "\n",
+        "\n",
+        "distance= float(input('Enter distance: '))\n",
+        "unit = input('Enter Miles or Kilometers? (M/K): ').upper()\n",
+        "\n",
+        "if unit=='K':\n",
+        "  converted= distance*km_to_mile\n",
+        "  print('Distance in Miles:', converted)\n",
+        "elif unit=='M':\n",
+        "  converted=distance*mile_to_km\n",
+        "  print(\"Distance in Kilometers: \",converted)\n",
+        "else:\n",
+        "  print('wrong input')\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1QQXst9Pqx6M",
+        "outputId": "1cb73d22-e876-4614-acf5-fb5ee0d44a3b"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter distance: 5\n",
+            "Enter Miles or Kilometers? (M/K): K\n",
+            "Distance in Miles: 3.106855\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "noZfayx7TZbm"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
